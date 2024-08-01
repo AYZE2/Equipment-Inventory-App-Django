@@ -1,0 +1,20 @@
+
+{%extends 'main.html'%}
+
+{%block content%}
+
+
+<h1>LOGO new  Blist</h1>
+<div>
+<h3>{{listitem.id}}---{{listitem.name}} {{listitem.description}} {{listitem.updated}}</h3>
+
+</div>
+<h2>update</h2>
+<form action="" method='post' novalidate>
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+    <hr>
+
+{%endblock content%}

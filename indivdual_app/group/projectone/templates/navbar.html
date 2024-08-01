@@ -1,0 +1,29 @@
+<div>
+    <h1>LOGO  NAVBAR</h1>
+    {% load static%}
+    <img src={% static "appone/download.jpg" %} alt ="test">
+</div>
+<header id="header">
+        <img id="logo" src="https://yt3.ggpht.com/a/AATXAJy_XbcoSEvCz8GV6UCoFTEjGCKVwBjv7ZSy=s900-c-k-c0xffffffff-no-rj-mo" alt="University of Westminster Logo">
+        <div id="heading">Equipment Booking and Management System</div>
+        <a href="{% url 'login'%}" class="button green">User Login</a>
+        <a href="{% url 'homepage'%}" class="button green">Home Page</a>
+        <a href="{% url 'profile'%}" class="button green">Profile</a>
+        <a href="{% url 'login'%}" class="button blue">Admin Login</a>
+        <a href="{% url 'register'%}" class="button red">User Sign Up</a>
+      </header>
+
+
+{% if user.is_authenticated %}
+<form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+    </form>
+
+        <a href = "{% url 'appone_createitem' %}">Create Item</a>
+        Hello: {{user.username}}
+{% else %}
+        <a href = "{% url 'register' %}">register new user</a>
+        <a href = "{% url 'login' %}">login</a>
+{% endif %}
+<hr>

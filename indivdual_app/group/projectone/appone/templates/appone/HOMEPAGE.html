@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipment Booking and Management System</title>
+<style>
+  /* Embedded CSS Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Set background color */
+  }
+
+  #header {
+    background-color: #333; /* Set header background color */
+    color: #fff; /* Set header text color */
+    padding: 20px;
+    text-align: center;
+  }
+
+  #logo {
+    width: 50px; /* Adjust logo size as needed */
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  #heading {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .green {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+  .blue {
+    background-color: #2196F3; /* Blue */
+    color: white;
+  }
+
+  .red {
+    background-color: #f32121; /* Red */
+    color: white;
+  }
+
+
+  #search-bar {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  #list-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  #equipment-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #equipment-list li {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+
+  #equipment-list li:hover {
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <img id="logo" src="https://yt3.ggpht.com/a/AATXAJy_XbcoSEvCz8GV6UCoFTEjGCKVwBjv7ZSy=s900-c-k-c0xffffffff-no-rj-mo" alt="University of Westminster Logo">
+  <div id="heading">Equipment Booking and Management System</div>
+  <a href="{% url 'login'%}" class="button green">User Login</a>
+  <a href="login" class="button blue">Admin Login</a>
+  <a href=""{% url 'register'%}"" class="button red">User Sign Up</a>
+</header>
+
+<div id="search-bar">
+  <input type="text" placeholder="Search..." id="search-input">
+</div>
+
+<div id="list-heading">LIST OF EQUIPMENT</div>
+
+<ul id="equipment-list">
+  <h1>anshul</h1>
+  <li>Gigabyte Aero15 1070 (E-N5110-PC-A1)</li>
+  <li>Gigabyte Aero15-X9 2070 (E-N5110-PC-A3)</li>
+  <li>Gigabyte Aero15-X9 2070 (E-N5110-PC-A6)</li>
+  <li>Gigabyte Aero15-X9 2070 (E-N5110-PC-A5)</li>
+  <li>Gigabyte Aero15-X9 2070 (E-N5110-PC-A4)</li>
+  <li>Google Pixel 2 G011A</li>
+  <li>Samsung Galaxy S6 SM-G920F</li>
+  <li>iPad Air Gen3</li>
+  <li>iPad Pro Gen6</li>
+  <li>Mac Mini M2 A2816</li>
+  <li>Gigabyte Aorus15X 4070</li>
+  <li>Oculus Quest 1</li>
+  <li>Oculus Quest 1</li>
+  <li>Oculus Quest 1</li>
+  <li>Pico 4</li>
+  <li>Pico 4</li>
+  <li>Pico 4 Enterprise</li>
+  <li>Oculus Quest 2</li>
+  <li>Oculus Quest 2</li>
+  <li>Oculus Quest 2</li>
+  <li>Vive Focus 3</li>
+  <li>Vive Focus 3</li>
+  <li>Vive Focus 3</li>
+  <li>Vive Focus 3</li>
+  <li>Vive Focus 3</li>
+  <li>Hololens 1</li>
+  <li>Hololens 2</li>
+  <li>Raspberry Pi 4 (BCM2711C0 Variant)</li>
+  <li>Mac Mini Intel A1993</li>
+</ul>
+
+<script>
+// JavaScript code to filter the equipment list based on the search input
+document.getElementById('search-input').addEventListener('input', function() {
+  var searchValue = this.value.toLowerCase();
+  var equipmentList = document.getElementById('equipment-list').getElementsByTagName('li');
+  for (var i = 0; i < equipmentList.length; i++) {
+    var currentItem = equipmentList[i].textContent.toLowerCase();
+    if (currentItem.includes(searchValue)) {
+      equipmentList[i].style.display = 'block';
+    } else {
+      equipmentList[i].style.display = 'none';
+    }
+  }
+});
+</script>
+
+</body>
+</html>

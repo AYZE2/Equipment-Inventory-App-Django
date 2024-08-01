@@ -1,0 +1,19 @@
+
+{%extends 'main.html'%}
+
+{%block content%}
+
+<div>
+    <form method='POST'>
+        {% csrf_token %}
+        <p>delete {{item.name}}</p>
+        <input type="submit" value="Confirm">
+
+    </form>
+    <div>
+        <small>
+            <a href="{% url 'homepage' %}"> cancel</a>
+        </small>
+    </div>
+</div>
+{%endblock content%}

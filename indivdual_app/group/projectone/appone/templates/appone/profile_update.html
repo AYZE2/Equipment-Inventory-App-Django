@@ -1,0 +1,19 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<h1>LOGO new  Blist</h1>
+<div>
+<h3>{{user.username}}---{{user.username}}</h3>
+<h3>User---{{user.username}}  </h3>
+<h3>email---{{user.email}}  </h3>
+<h3>Address---{{user.profile.address}}  </h3>
+<h3>Phone---{{user.profile.phone}}  </h3>
+
+
+<form method='POST'>
+    {% csrf_token %}
+    {{user_form}}
+    {{profile_form}}
+    <input class="blue button" type="submit" value="Update">
+</form>
+{%endblock content%}
